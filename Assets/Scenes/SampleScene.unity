@@ -15,7 +15,7 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.21698111, g: 0.20776965, b: 0.20776965, a: 1}
+  m_FogColor: {r: 0.0754717, g: 0.0751157, b: 0.0751157, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.05
   m_LinearFogStart: 0
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.057157554, g: 0.040360942, b: 0.03719623, a: 1}
+  m_IndirectSpecularColor: {r: 0.057156306, g: 0.04036164, b: 0.037197225, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -584,35 +584,6 @@ CapsuleCollider:
   m_Height: 5.2465067
   m_Direction: 1
   m_Center: {x: -0.012220252, y: 0.22383533, z: 0}
---- !u!114 &861189638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 861189633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35beeca5c85fdba4d893483c6f45e6d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemDisplay: {fileID: 807487852}
-  interactionText: I am the evil troglodyte
-  OnInteract:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1790262845}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: Play
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: TrogArmsPunch
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -2300,6 +2271,7 @@ GameObject:
   - component: {fileID: 1278236745}
   - component: {fileID: 1278236744}
   - component: {fileID: 1278236743}
+  - component: {fileID: 1278236749}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2347,6 +2319,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   sprintSpeed: 8
+  jumpForce: 12
+  gravityMult: 2.5
+  isFalling: 0
 --- !u!114 &1278236745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2402,6 +2377,33 @@ Transform:
   - {fileID: 963194228}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1278236749
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278236742}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1279465239
 GameObject:
   m_ObjectHideFlags: 0
@@ -2438,50 +2440,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1279465239}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.8010741, y: -0.2623074, z: 0.5660181}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1320099767
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1320099769}
-  - component: {fileID: 1320099768}
-  m_Layer: 0
-  m_Name: InputHandler
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1320099768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1320099767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e332ca6bcbebeff4da09bc7852fa4e38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1320099769
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1320099767}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.8010741, y: -0.2623074, z: 0.5660181}
@@ -2614,6 +2572,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 84a200b75c5a1aa4db87ab070b588a7d, type: 3}
       propertyPath: m_Name
       value: TestCave
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 84a200b75c5a1aa4db87ab070b588a7d, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2793,9 +2755,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7940114384624778203, guid: c358dd4f5817c7744af79701fe0aa2c5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 861189636}
-    - targetCorrespondingSourceObject: {fileID: 7940114384624778203, guid: c358dd4f5817c7744af79701fe0aa2c5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 861189638}
   m_SourcePrefab: {fileID: 100100000, guid: c358dd4f5817c7744af79701fe0aa2c5, type: 3}
 --- !u!1001 &3437562391417044286
 PrefabInstance:
@@ -2860,7 +2819,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 705507995}
   - {fileID: 1279465241}
-  - {fileID: 1320099769}
   - {fileID: 1278236748}
   - {fileID: 1072426400}
   - {fileID: 1564968591}
