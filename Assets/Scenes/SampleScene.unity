@@ -2782,6 +2782,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpadeArms
       objectReference: {fileID: 0}
+    - target: {fileID: 2440734333500818422, guid: c5881284219b7eb4c8af7bd2ca60ca6c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3068334932403870028, guid: c5881284219b7eb4c8af7bd2ca60ca6c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.07
@@ -2905,13 +2909,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 963194228}
     m_Modifications:
+    - target: {fileID: 1495563335607539414, guid: fec9c41a690a5e449bdcc865f08c8adf, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 963194227}
     - target: {fileID: 6929269489983143922, guid: fec9c41a690a5e449bdcc865f08c8adf, type: 3}
       propertyPath: m_Name
       value: Pick Arms Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 6929269489983143922, guid: fec9c41a690a5e449bdcc865f08c8adf, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7737858504011408712, guid: fec9c41a690a5e449bdcc865f08c8adf, type: 3}
       propertyPath: m_LocalPosition.x
