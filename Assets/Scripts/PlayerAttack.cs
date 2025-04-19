@@ -10,6 +10,8 @@ public class PlayerAttack : MonoBehaviour
     public GameObject hitEffect;
     bool attacking = false;
     bool readyToAttack = true;
+    public float attackRange = 3;
+    public float knockback = 0;
     int attackCount;
     public int damage;
     
@@ -32,13 +34,10 @@ public class PlayerAttack : MonoBehaviour
     {
         animator.SetTrigger("Attack");
 
-        if (readyToAttack || attacking) return;
+        if (!readyToAttack || attacking) return;
 
         readyToAttack = false;
         attacking = true;
-
-        Invoke(nameof(ResetAttack), 1f);
-        Invoke(nameof(AttackRaycast), 100f);
     }
 
     void ResetAttack()
@@ -49,13 +48,18 @@ public class PlayerAttack : MonoBehaviour
 
     void AttackRaycast()
     {
-        if(Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, attackLayer))
+        if(Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, attackRange, attackLayer))
         {
             HitTarget(hit.point);
 
             if(hit.transform.TryGetComponent<Enemy>(out Enemy T))
             {
                 T.TakeDamage(damage);
+            }
+
+            if (hit.transform.TryGetComponent<Rigidbody>(out Rigidbody rb))
+            {
+                rb.AddForce(cam.transform.forward * knockback, ForceMode.Impulse);
             }
         }
     }

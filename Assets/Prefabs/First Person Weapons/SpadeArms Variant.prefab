@@ -1410,8 +1410,10 @@ MonoBehaviour:
   animator: {fileID: 1745112589618593512}
   attackLayer:
     serializedVersion: 2
-    m_Bits: 0
-  hitEffect: {fileID: 5595421286883120113, guid: 52857b4c81289a441a709868efc39122, type: 3}
+    m_Bits: 72
+  hitEffect: {fileID: 5595421286883120113, guid: e139384dea952034fb997934578e1531, type: 3}
+  attackRange: 2.5
+  knockback: 6.5
   damage: 40
 --- !u!1001 &8899100962888050693
 PrefabInstance:

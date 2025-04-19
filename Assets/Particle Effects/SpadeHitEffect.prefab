@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4472716718718590324}
   m_Layer: 0
-  m_Name: HitEffect
+  m_Name: SpadeHitEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d615a56eb1debfb4780a03e1431d9ac1, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0243758d48208874eaa03bce27e0a7cd, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.75
   m_Pitch: 1
