@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     public Camera cam;
+    public AudioSource source;
+    public AudioClip audio;
     public Animator animator;
     public LayerMask attackLayer;
     public GameObject hitEffect;
@@ -34,6 +36,8 @@ public class PlayerAttack : MonoBehaviour
     {
         animator.SetTrigger("Attack");
 
+        source.Play();
+        
         if (!readyToAttack || attacking) return;
 
         readyToAttack = false;
@@ -67,6 +71,8 @@ public class PlayerAttack : MonoBehaviour
     void HitTarget(Vector3 pos)
     {
         GameObject GO = Instantiate(hitEffect, pos, Quaternion.identity);
+        AudioSource sound = GO.transform.Find("Hit Sound").GetComponent<AudioSource>();
+        sound.pitch = Random.Range(0.9f, 1.1f);
         Destroy(GO, 20);
     }
 }
