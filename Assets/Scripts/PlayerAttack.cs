@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -10,17 +11,24 @@ public class PlayerAttack : MonoBehaviour
     public Animator animator;
     public LayerMask attackLayer;
     public GameObject hitEffect;
+    public DurabilityBar durabilityBar;
+
     bool attacking = false;
     bool readyToAttack = true;
+
     public float attackRange = 3;
     public float knockback = 0;
+
     int attackCount;
     public int damage;
+    public float currentDurability;
+    public float maxDurability;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentDurability = maxDurability;
+        durabilityBar.SetMaxDur(maxDurability);
     }
 
     // Update is called once per frame
@@ -74,5 +82,14 @@ public class PlayerAttack : MonoBehaviour
         AudioSource sound = GO.transform.Find("Hit Sound").GetComponent<AudioSource>();
         sound.pitch = Random.Range(0.9f, 1.1f);
         Destroy(GO, 20);
+
+        currentDurability--;
+        durabilityBar.SetDur(currentDurability);
+
+        if (currentDurability <= 0)
+        {
+            Destroy(GO);
+            damage = 0;
+        }
     }
 }
