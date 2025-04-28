@@ -6,6 +6,10 @@ public class InteractionObject : MonoBehaviour
 {
     [SerializeField] private Text itemDisplay;
     [SerializeField] private string interactionText = "I am an interactable object!!!!";
+    public GameObject itemItself;
+    public GameObject trogArms;
+    public GameObject pickArms;
+    public GameObject spadeArms;
 
     public UnityEvent OnInteract = new UnityEvent();
 
@@ -22,6 +26,27 @@ public class InteractionObject : MonoBehaviour
     public void Interact()
     {
         OnInteract.Invoke();
+    }
+
+    public void Equip()
+    {
+        Destroy(itemItself);
+        trogArms.SetActive(false);
+
+        if (itemItself.tag == "Great Pick")
+        {
+            pickArms.SetActive(true);
+            spadeArms.SetActive(false);
+
+            //PlayerAttack.currentDurability(pickArms) = maxDurability;
+        }
+
+        if (itemItself.tag == "Great Spade")
+        {
+            spadeArms.SetActive(true);
+            pickArms.SetActive(false);
+        }
+
     }
 }
 
