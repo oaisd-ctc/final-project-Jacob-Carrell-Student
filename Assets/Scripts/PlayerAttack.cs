@@ -12,6 +12,7 @@ public class PlayerAttack : MonoBehaviour
     public LayerMask attackLayer;
     public GameObject hitEffect;
     public DurabilityBar durabilityBar;
+    public static PlayerAttack weapon;
 
     bool attacking = false;
     bool readyToAttack = true;
@@ -91,5 +92,10 @@ public class PlayerAttack : MonoBehaviour
             Destroy(GO);
             damage = 0;
         }
+    }
+
+    public void ResetDurability()
+    {
+        currentDurability = maxDurability;
     }
 }

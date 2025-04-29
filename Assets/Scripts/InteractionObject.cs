@@ -38,13 +38,15 @@ public class InteractionObject : MonoBehaviour
             pickArms.SetActive(true);
             spadeArms.SetActive(false);
 
-            //PlayerAttack.currentDurability(pickArms) = maxDurability;
+            weapon.ResetDurability;
         }
 
         if (itemItself.tag == "Great Spade")
         {
             spadeArms.SetActive(true);
             pickArms.SetActive(false);
+
+            weapon.ResetDurability;
         }
 
     }
