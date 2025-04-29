@@ -38,7 +38,7 @@ public class InteractionObject : MonoBehaviour
             pickArms.SetActive(true);
             spadeArms.SetActive(false);
 
-            weapon.ResetDurability;
+            // weapon.ResetDurability;
         }
 
         if (itemItself.tag == "Great Spade")
@@ -46,7 +46,7 @@ public class InteractionObject : MonoBehaviour
             spadeArms.SetActive(true);
             pickArms.SetActive(false);
 
-            weapon.ResetDurability;
+            // weapon.ResetDurability;
         }
 
     }

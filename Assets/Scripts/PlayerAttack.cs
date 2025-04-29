@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerAttack : MonoBehaviour
 {
+    public PlayerAttack weapon;
+
     public Camera cam;
     public AudioSource source;
     public AudioClip audio;
@@ -12,7 +14,6 @@ public class PlayerAttack : MonoBehaviour
     public LayerMask attackLayer;
     public GameObject hitEffect;
     public DurabilityBar durabilityBar;
-    public static PlayerAttack weapon;
 
     bool attacking = false;
     bool readyToAttack = true;
