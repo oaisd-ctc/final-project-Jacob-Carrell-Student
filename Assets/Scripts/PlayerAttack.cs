@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public PlayerAttack weapon;
-
+    public GameObject fists;
     public Camera cam;
     public AudioSource source;
     public AudioClip audio;
@@ -58,6 +57,13 @@ public class PlayerAttack : MonoBehaviour
     {
         attacking = false;
         readyToAttack = true;
+
+        if (currentDurability <= 0)
+        {
+            gameObject.SetActive(false);
+            durabilityBar.gameObject.SetActive(false);
+            fists.SetActive(true);
+        }
     }
 
     void AttackRaycast()
@@ -87,16 +93,11 @@ public class PlayerAttack : MonoBehaviour
 
         currentDurability--;
         durabilityBar.SetDur(currentDurability);
-
-        if (currentDurability <= 0)
-        {
-            Destroy(GO);
-            damage = 0;
-        }
     }
 
     public void ResetDurability()
     {
         currentDurability = maxDurability;
+        durabilityBar.SetDur(currentDurability);
     }
 }

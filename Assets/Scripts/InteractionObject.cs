@@ -6,7 +6,7 @@ public class InteractionObject : MonoBehaviour
 {
     [SerializeField] private Text itemDisplay;
     [SerializeField] private string interactionText = "I am an interactable object!!!!";
-    public GameObject itemItself;
+    public PlayerAttack weapon;
     public GameObject trogArms;
     public GameObject pickArms;
     public GameObject spadeArms;
@@ -30,23 +30,23 @@ public class InteractionObject : MonoBehaviour
 
     public void Equip()
     {
-        Destroy(itemItself);
+        Destroy(gameObject);
         trogArms.SetActive(false);
 
-        if (itemItself.tag == "Great Pick")
+        if (gameObject.tag == "Great Pick")
         {
             pickArms.SetActive(true);
             spadeArms.SetActive(false);
 
-            // weapon.ResetDurability;
+            weapon.ResetDurability();
         }
 
-        if (itemItself.tag == "Great Spade")
+        if (gameObject.tag == "Great Spade")
         {
             spadeArms.SetActive(true);
             pickArms.SetActive(false);
 
-            // weapon.ResetDurability;
+            weapon.ResetDurability();
         }
 
     }
