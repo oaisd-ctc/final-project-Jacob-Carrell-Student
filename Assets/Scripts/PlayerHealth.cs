@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
@@ -18,7 +19,13 @@ public class PlayerHealth : MonoBehaviour
 
         if (health <= 0)
         {
-            print("you dieded!!!!");
+            SceneManager.LoadScene("Death Screen");
         }
+    }
+
+    public void EatSteak()
+    {
+        health = health + 30;
+        durabilityBar.SetDur(health);
     }
 }

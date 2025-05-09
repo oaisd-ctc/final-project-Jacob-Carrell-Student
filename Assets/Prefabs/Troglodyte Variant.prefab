@@ -158,19 +158,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 44ce7e7ed9bad6140bbe22078540f304, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.831787
+      value: -15.306747
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 44ce7e7ed9bad6140bbe22078540f304, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.2755942
+      value: 0.17699999
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 44ce7e7ed9bad6140bbe22078540f304, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.432217
+      value: -36.603264
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 44ce7e7ed9bad6140bbe22078540f304, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9768245
+      value: -0.14120758
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 44ce7e7ed9bad6140bbe22078540f304, type: 3}
       propertyPath: m_LocalRotation.x
@@ -178,7 +178,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 44ce7e7ed9bad6140bbe22078540f304, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.21404192
+      value: -0.9899801
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 44ce7e7ed9bad6140bbe22078540f304, type: 3}
       propertyPath: m_LocalRotation.z
@@ -190,7 +190,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 44ce7e7ed9bad6140bbe22078540f304, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -24.719
+      value: -196.235
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 44ce7e7ed9bad6140bbe22078540f304, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -500,7 +500,7 @@ MonoBehaviour:
   currentHealth: 100
   maxHealth: 100
   ragdollForce: 150
-  damage: 2
+  damage: 5
 --- !u!95 &2371674041858605566
 Animator:
   serializedVersion: 7
