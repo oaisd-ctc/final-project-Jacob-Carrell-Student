@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.057157554, g: 0.040360942, b: 0.03719623, a: 1}
+  m_IndirectSpecularColor: {r: 0.057168253, g: 0.040313493, b: 0.037067495, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -762,6 +762,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 28e4d884362224a498b2e19cc0450184, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c029ff292daa4ad44b867814e83a5f99, type: 2}
     - target: {fileID: 919132149155446097, guid: 28e4d884362224a498b2e19cc0450184, type: 3}
       propertyPath: m_Name
       value: Cave
@@ -1637,14 +1641,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 369464714}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: Quit
-        m_Mode: 1
+        m_MethodName: LoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: SampleScene
+          m_StringArgument: Title Screen
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2069929350

@@ -28,7 +28,7 @@ public class PlayerAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentDurability = maxDurability;
+        currentDurability = maxDurability; 
         durabilityBar.SetMaxDur(maxDurability);
     }
 
